@@ -21,17 +21,15 @@ buildscript {
 apply plugin: 'kotlin2js'
 apply plugin: 'org.jetbrains.kotlin.frontend'
 
-sourceSets {
-    main.kotlin.srcDirs += 'src/main/kotlin'
-    main.kotlin.srcDirs += 'src/test/kotlin' //remove from sourceDirs when building to distribute the library
-    main.resources.srcDirs += "src/main/resources"
-    main.resources.srcDirs += "src/test/resources" //remove from sourceDirs when building to distribute the library
-    main.output.resourcesDir = "build/js/resources"
-
-    runSourceSet {
-        kotlin.srcDirs += 'src/main/kotlin'
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/kotlin'
+        if(project.gradle.startParameter.taskNames.contains("run")) {
+            main.kotlin.srcDirs += 'src/test/kotlin'
+            main.resources.srcDirs += "src/main/resources"
+            main.resources.srcDirs += "src/test/resources"
+            main.output.resourcesDir = "build/js/resources"
+        }
     }
-}
 
 repositories {
     maven { url = 'https://dl.bintray.com/kotlin/kotlin-eap-1.1' }
