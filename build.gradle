@@ -80,4 +80,24 @@ jar {
     baseName = project.name
     from "build/js"
     include "${output_filename}*.js"
+    include "${project.group}/**/*.*"
+}
+
+if(project.gradle.startParameter.taskNames.contains("jar")){
+    compileKotlin2Js.dependsOn 'cleanJar'
+} else if(project.gradle.startParameter.taskNames.contains("run")) {
+    compileKotlin2Js.dependsOn 'cleanJs'
+}
+
+task cleanJar {
+    dependsOn 'cleanJs'
+    doFirst {
+        delete 'build/libs'
+    }
+}
+
+task cleanJs {
+    doFirst {
+        delete 'build/js'
+    }
 }
