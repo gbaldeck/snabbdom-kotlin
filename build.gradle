@@ -73,8 +73,6 @@ compileKotlin2Js {
     kotlinOptions.moduleKind = 'commonjs'
 }
 
-build.shouldRunAfter clean
-
 jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     baseName = project.name
