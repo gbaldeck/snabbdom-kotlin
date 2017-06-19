@@ -14,6 +14,8 @@ The output from the `ts2kt tool` is in the `/snabbdom.d.ts/generated` folder.
 
 The files under the `src` folder are these same output files but modified so that snabbdom is completely ready to use in Kotlin.
 
+The files under the `dist` folder are the generated library if you'd prefer to download those and include them in your project instead of using bintray.
+
 ### How to use
 
 The releases of this project are available from bintray. 

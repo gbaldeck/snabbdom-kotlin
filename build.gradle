@@ -75,6 +75,7 @@ compileKotlin2Js {
 
 jar {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    dependsOn 'copyToDist'
     baseName = project.name
     from "build/js"
     include "${output_filename}*.js"
@@ -91,6 +92,7 @@ task cleanJar {
     dependsOn 'cleanJs'
     doFirst {
         delete 'build/libs'
+        delete 'dist'
     }
 }
 
@@ -98,4 +100,12 @@ task cleanJs {
     doFirst {
         delete 'build/js'
     }
+}
+
+task copyToDist(type: Copy){
+    from('build/js'){
+        include "${output_filename}*.js"
+        include "${project.group}/**/*.*"
+    }
+    into "dist/${project.version}"
 }
