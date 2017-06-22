@@ -37,7 +37,3 @@ To see this library being used in a project check out Propa (https://github.com/
 
 Propa uses the Kotlin Gradle plugin as well as the Kotlin-Frontend Gradle plugin. To see how it works look at the Propa `build.gradle` file (https://github.com/PropaFramework/Propa/blob/master/build.gradle).
 
-Propa is a frontend framework for the web written in Kotlin for Kotlin and is currently under development. It's meant to be to Kotlin what Vue, React, and Angular are to Javascript/Typescript.
-
-If you're interested in contributing to Propa feel free to send me an e-mail at gbaldeck@gmail.com.
-
