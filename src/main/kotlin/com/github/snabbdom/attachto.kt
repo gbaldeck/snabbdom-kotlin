@@ -4,7 +4,7 @@ package com.github.snabbdom
 import org.w3c.dom.Element
 import org.w3c.dom.Node
 
-@JsModule("snabbdom/helpers/attachTo")
+@JsModule("snabbdom/helpers/attachto")
 @JsNonModule
 external val attachTo: dynamic = definedExternally
 fun attachTo(target: Element, vnode: VNode): VNode = attachTo.default(target, vnode)
