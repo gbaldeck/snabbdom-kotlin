@@ -1,7 +1,5 @@
-gradlew
-gradlew.bat
-/gradle
-/build
-/.gradle
-/.idea
+.*/
+build/
 *.iml
+/build-mvnlocal.sh
+/upload.sh
