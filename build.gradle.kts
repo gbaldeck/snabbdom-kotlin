@@ -50,7 +50,6 @@ kotlin {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-js"))
     implementation(npm("snabbdom", "^0.7.4"))
 }
 
@@ -72,12 +71,3 @@ publishing {
 }
 
 setupPublication()
-
-tasks {
-    getByName("JsJar", Jar::class) {
-        from("${project.buildDir}/js/packages/snabbdom-kotlin/package.json")
-    }
-    getByName("JsIrJar", Jar::class) {
-        from("${project.buildDir}/js/packages/snabbdom-kotlin-JsIr/package.json")
-    }
-}

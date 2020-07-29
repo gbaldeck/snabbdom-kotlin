@@ -6,9 +6,9 @@ https://github.com/snabbdom/snabbdom
 
 ### Project Details
 
-The definition files here are based on snabbdom v0.6.9.
+The definition files here are based on snabbdom v0.7.4.
 
-This project is built with Gradle 6.3.
+This project is built with Gradle 6.5.1.
 
 The typescript definition files in the `/snabbdom.d.ts` folder are copied from the snabbdom v0.6.9 release on npm and then run through the `ts2kt tool` (https://github.com/Kotlin/ts2kt).
 The output from the `ts2kt tool` is in the `/snabbdom.d.ts/generated` folder.
@@ -34,7 +34,7 @@ Don't forget to include Snabbdom in your project.
 
     dependencies {
         ...
-        implementation(npm("snabbdom"))
+        implementation(npm("snabbdom", "^0.7.4"))
     }
 
 To see this library being used in a project check out KVision (https://github.com/rjaros/kvision).

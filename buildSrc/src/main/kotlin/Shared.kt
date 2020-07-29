@@ -40,7 +40,7 @@ fun Project.setupPublication() {
 
         repositories {
             maven {
-                url = uri("https://api.bintray.com/maven/rjaros/kotlin/${project.name}/;publish=0;override=1")
+                url = uri("https://api.bintray.com/maven/gbaldeck/kotlin/${project.name}/;publish=0;override=1")
                 credentials {
                     username = findProperty("buser")?.toString()
                     password = findProperty("bkey")?.toString()
