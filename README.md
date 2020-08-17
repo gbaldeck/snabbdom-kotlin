@@ -8,7 +8,7 @@ https://github.com/snabbdom/snabbdom
 
 The definition files here are based on snabbdom v0.7.4.
 
-This project is built with Gradle 6.5.1.
+This project is built with Gradle 6.6.
 
 The typescript definition files in the `/snabbdom.d.ts` folder are copied from the snabbdom v0.6.9 release on npm and then run through the `ts2kt tool` (https://github.com/Kotlin/ts2kt).
 The output from the `ts2kt tool` is in the `/snabbdom.d.ts/generated` folder.
