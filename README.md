@@ -1,39 +1,40 @@
 # snabbdom-kotlin
+
 This project is a set of Kotlin definition files for the Snabbdom virtual DOM library. Snabbdom is used in several frontend frameworks, the most famous being Vue.
 
 https://github.com/snabbdom/snabbdom
 
 ### Project Details
 
-The definition files here are based on snabbdom v0.6.9.
+The definition files here are based on snabbdom v0.7.4.
 
-This project is built with Gradle 4.0.
+This project is built with Gradle 6.6.
 
 The typescript definition files in the `/snabbdom.d.ts` folder are copied from the snabbdom v0.6.9 release on npm and then run through the `ts2kt tool` (https://github.com/Kotlin/ts2kt).
 The output from the `ts2kt tool` is in the `/snabbdom.d.ts/generated` folder.
 
-The files under the `src` folder are these same output files but modified so that snabbdom is completely ready to use in Kotlin.
-
-The files under the `dist` folder are the generated library if you'd prefer to download those and include them in your project instead of using bintray.
+The files under the `src` folder are the same output files but modified so that snabbdom is completely ready to use in Kotlin.
 
 ### How to use
 
-The releases of this project are available from bintray. 
-To include it in a project put the below in your build.gradle file.
+The releases of this project are available from bintray.
+To use it in your project add the following code in your build.gradle.kts file.
 
-    
     repositories {
         ...
-        maven { url = 'https://dl.bintray.com/gbaldeck/kotlin' }
+        maven { url = uri("https://dl.bintray.com/gbaldeck/kotlin") }
     }
-    
+
     dependencies {
         ...
-        compile "com.github.snabbdom:snabbdom-kotlin:0.1.0"
+        api("com.github.snabbdom:snabbdom-kotlin:$snabbdomKotlinVersion")
+    }
+    
+Don't forget to include Snabbdom in your project.
+
+    dependencies {
+        ...
+        implementation(npm("snabbdom", "^0.7.4"))
     }
 
-
-To see this library being used in a project check out Propa (https://github.com/PropaFramework/Propa).
-
-Propa uses the Kotlin Gradle plugin as well as the Kotlin-Frontend Gradle plugin. To see how it works look at the Propa `build.gradle` file (https://github.com/PropaFramework/Propa/blob/master/build.gradle).
-
+To see this library being used in a project check out KVision (https://github.com/rjaros/kvision).
